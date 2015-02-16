@@ -20,8 +20,15 @@
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 			<link rel="stylesheet" href="css/style-desktop.css" />
+			<link rel="stylesheet" href="css/bootstrap.css" />
 			<link rel="stylesheet" href="css/override.css" />
 		</noscript>
+		<script type="text/javascript">
+			function overlay() {
+				var el = document.getElementById("overlay");
+				el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+			}
+		</script>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body class="homepage">
@@ -33,12 +40,28 @@
 							<div class="title" style="background-image: url('../images/banner.jpg');">
 								<section class="feature-list small">
 									<div class="row">
-										<div class="6u">
-											<section class="center-align">
-												<h3 class="icon fa-facebook"></h3>
+										<div class="3u">
+											<section>
+												<a href="#" ><h3 style="" class="icon fa-facebook"></h3></a>
+											</section>
+										</div>
+										<div class="3u">
+											<section>
+												<a href="#"><h3 class="icon fa-twitter"></h3></a>
+											</section>
+										</div>
+										<div class="3u">
+											<section>
+												<a href="#"><h3 class="icon fa-linkedin"></h3></a>
+											</section>
+										</div>
+										<div class="3u">
+											<section>
+												<a href="#"><h3 class="icon fa-github"></h3></a>
 											</section>
 										</div>
 									</div>
+
 								</section>	
 							</div>
 							<br>
@@ -81,7 +104,7 @@
 		
 		<!-- Intro -->
 			<div id="intro-wrapper" class="wrapper style1">
-				<div class="title" style="font-size:25px;">How it works</div>
+				<div class="title" style="font-size:25px;">What We Do</div>
 				<section id="intro" class="container">
 						<p class="style2">
 						<a>E-Mart is a brand new way of online shopping, made reliable and painless with our easy to use delivery system. </a>
@@ -89,11 +112,24 @@
 					<p class="style3">Our service emphasizes on <strong>fast</strong> and easy <strong>online</strong> shopping for your everyday <strong>grocery</strong> needs. By signing up, you are able to add <strong>products</strong> to your shopping cart and have
 					them delivered to your <strong>doorstep</strong> in no time!
 					<ul class="actions">
-						<li><a href="#" class="button style3 big">Sign Up</a></li>
+						<li><button type="button" class="button style3 big" onclick="overlay()">Sign Up</button></li>
 					</ul>
 				</section>
 			</div>
-		
+
+		<!--  Signup Modal -->
+		<div id="overlay">
+			<div class="6u">
+				<ul class="actions">
+					<li><input type="text" name="name" id="contact-name" placeholder="Name" /></li>
+					<li><input type="text" name="name" id="contact-email" placeholder="Email" /></li>
+				</ul>
+				<ul class="actions">
+					<li><a href="#" class="button style1">Sign Up</a></li>
+					<li><a href="index.html" class="button style1">Cancel</a></li>
+				</ul>
+			</div>
+		</div>
 		<!-- Main -->
 			<div class="wrapper style2">
 				<div class="title">The Details</div>
@@ -113,41 +149,27 @@
 								<div class="row">
 									<div class="6u">
 										<section>
-											<h3 class="icon fa-comment">Mattis velit diam vulputate</h3>
-											<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
+											<h3 class="icon fa-building">Order from any store</h3>
+											<p>Pick any store you regularly shop from, choose their products and when you are ready, add them to your shopping cart.</p>
 										</section>
 									</div>
 									<div class="6u">
 										<section>
-											<h3 class="icon fa-refresh">Lorem ipsum dolor sit veroeros</h3>
-											<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-										</section>
-									</div>
-								</div>
-								<div class="row">
-									<div class="6u">
-										<section>
-											<h3 class="icon fa-picture-o">Pretium phasellus justo lorem</h3>
-											<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
-										</section>
-									</div>
-									<div class="6u">
-										<section>
-											<h3 class="icon fa-cog">Tempus sed pretium orci</h3>
-											<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
+											<h3 class="icon fa-shopping-cart">Online shopping cart</h3>
+											<p>Shopping has never been easier. Our online shopping cart makes it easy to shop for your every day grocery needs.</p>
 										</section>
 									</div>
 								</div>
 								<div class="row">
 									<div class="6u">
 										<section>
-											<h3 class="icon fa-wrench">Aliquam consequat et feugiat</h3>
+											<h3 class="icon fa-calendar">Schedule your delivery</h3>
 											<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
 										</section>
 									</div>
 									<div class="6u">
 										<section>
-											<h3 class="icon fa-check">Dolore laoreet aliquam mattis</h3>
+											<h3 class="icon fa-bus">Fast delivery</h3>
 											<p>Eget mattis at, laoreet vel et velit aliquam diam ante, aliquet sit amet vulputate. Eget mattis at, laoreet vel velit lorem.</p>
 										</section>
 									</div>
@@ -170,7 +192,7 @@
 						<div class="4u">
 							<section class="highlight">
 								<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<h3><a href="#">Robert Booth</a></h3>
 								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
 								<ul class="actions">
 									<li><a href="#" class="button style1">Learn More</a></li>
@@ -180,7 +202,7 @@
 						<div class="4u">
 							<section class="highlight">
 								<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<h3><a href="#">Carlos Grijalva</a></h3>
 								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
 								<ul class="actions">
 									<li><a href="#" class="button style1">Learn More</a></li>
@@ -190,7 +212,7 @@
 						<div class="4u">
 							<section class="highlight">
 								<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<h3><a href="#">Marcos Braga</a></h3>
 								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
 								<ul class="actions">
 									<li><a href="#" class="button style1">Learn More</a></li>
@@ -206,11 +228,7 @@
 				<div class="title">Contact Us</div>
 				<div id="footer" class="container">
 					<header class="style1">
-						<h2>Ipsum sapien elementum portitor?</h2>
-						<p>
-							Have a comment or question? Fill out the form below and we will promptly answer it as soon as possible.<br />
-							
-						</p>
+						<h2>Have a comment or question? Fill out the form below and we will promptly answer it as soon as possible.</h2>
 					</header>
 					<hr />
 					<div class="row 150%">
