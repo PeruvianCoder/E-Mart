@@ -28,6 +28,11 @@
 				var el = document.getElementById("overlay");
 				el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 			}
+
+			function loginModal(){
+				var el = document.getElementById("loginModal");
+				el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+			}
 		</script>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -36,7 +41,12 @@
 			<div id="header-wrapper" class="wrapper">
 				<div id="header">
 					<!-- Logo -->
+						
+
 						<div id="logo">
+							<ul class="actions">
+								<li><a href="#" class="button style1" onclick="loginModal()">Log In</a></li>
+							</ul>
 							<div class="title">
 								<section class="feature-list small">	
 									<div class="row">
@@ -64,12 +74,19 @@
 								</section>	
 							</div>
 							<br>
-							<h1 style="font-size: 62px;">E-Mart</h1>
-							<h2><p>Coming soon!</p></h2>
-							<p style="font-size: 30px;">Quick and easy grocery deliveries</p>
+							<h1 style="font-size: 50px;">Coming Soon!</h1>
+
+						<!-- 	<h2><p>Coming soon!</p></h2>
+							<p style="font-size: 30px;">Quick and easy grocery deliveries</p> -->
 						</div>
+
 					<!-- Nav -->
 						<nav id="nav">
+							<div id="logo">
+								<br>
+								<br>
+								<h1 style="font-size: 62px;">E-Mart</h1>
+							</div>
 							<ul>
 								<li class="current"><a href="index.html">Home</a></li>
 								<li>
@@ -103,7 +120,7 @@
 			<div id="intro-wrapper" class="wrapper style1">
 				<div class="title" style="font-size:25px;">What We Do</div>
 				<section id="intro" class="container">
-						<p class="style2">
+						<p class="style2" style="font-size:30px;">
 						<a>E-Mart is a brand new way of online shopping, made reliable and painless with our easy to use delivery system. </a>
 					</p>
 					<p class="style3">Our service emphasizes on <strong>fast</strong> and easy <strong>online</strong> shopping for your everyday <strong>grocery</strong> needs. By signing up, you are able to add <strong>products</strong> to your shopping cart and have
@@ -114,21 +131,39 @@
 				</section>
 			</div>
 
-		<!--  Signup Modal -->
-		<div id="overlay">
+		<!-- Login Modal -->
+		<div id="loginModal">
+			<form role="form" method="post" action="user/create.php">
 			<div class="6u">
 				<ul class="actions">
-					<li><input type="text" name="name" id="contact-name" placeholder="Name" /></li>
-					<li><input type="text" name="email" id="contact-email" placeholder="Email" /></li>
+					<li><input type="text" name="email" id="contact-name" placeholder="Email" /></li>
+					<li><input type="text" name="password" id="contact-password" placeholder="Password" /></li>
 				</ul>
 				<ul class="actions">
-					<li><input type="text" name="password" id="contact-password" placeholder="Password" /></li>
-					<li><input type="text" name="confirm" id="contact-confirm-password" placeholder="Confirm Password" /></li>
+					<li><button type="button" class="button style1">Enter</a></li>
+					<li><button type="button" class="button style1" onclick="loginModal()">Cancel</a></li>
+			</div>
+		</div>
+
+		<!--  Signup Modal -->
+		<div id="overlay">
+			<form role="form" method="post" action="user/create.php">
+			<div class="6u">
+				<ul class="actions">
+					<li><input type="text" name="first_name" id="contact-name" placeholder="First Name" /></li>
+					<li><input type="text" name="last_name" id="contact-email" placeholder="Last Name" /></li>
 				</ul>
+				<br>
+				<ul class="actions">
+					<li><input type="text" name="email" id="contact-password" placeholder="Email" /></li>
+					<li><input type="text" name="password" id="contact-confirm-password" placeholder="Password" /></li>
+				</ul>
+				<br>
 				<ul class="actions">
 					<li><button type="button" class="button style1">Sign Up</a></li>
-					<li><button type="button" class="button style1">Cancel</a></li>
+					<li><button type="button" class="button style1" onclick="overlay()">Cancel</a></li>
 				</ul>
+			</form>
 			</div>
 		</div>
 

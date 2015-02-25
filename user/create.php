@@ -1,9 +1,10 @@
 <?php
 	session_start();
 	// VALIDATE'S FIELDS
-	if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])) {
+	if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['password'])) {
 		// SET DATA TO VARIABLES
-		$name 			= $_POST['name'];
+		$first_name 	= $_POST['first_name'];
+		$last_name 		= $_POST['last_name'];
 		$email 			= $_POST['email'];
 		$pass 			= $_POST['password'];
 	} else {
@@ -25,8 +26,8 @@
 	}
 
 	// QUERY TO INSERT DATA
-	$insert = "INSERT INTO user (name,email,password,picture) values ('" . $name . "','" . $email . "','"
-	. hash('sha512',$pass) . "','../assets/img/profile/default.jpg');";
+		$insert = "INSERT INTO user (first_name,last_name,email,password) values ('" . $first_name . "','" . $last_name . "','" . $email . "','"
+	. hash('sha512',$pass) ."');";
 
 	// RUN QUERY
 	mysqli_query($conn,$insert);
