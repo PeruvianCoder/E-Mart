@@ -42,7 +42,6 @@
 				<div id="header">
 					<!-- Logo -->
 						
-
 						<div id="logo">
 							<ul class="actions">
 								<li><a href="#" class="button style1" onclick="loginModal()">Log In</a></li>
@@ -133,11 +132,11 @@
 
 		<!-- Login Modal -->
 		<div id="loginModal">
-			<form role="form" method="post" action="user/create.php">
+			<form role="form" method="post" action="user/login.php">
 			<div class="6u">
 				<ul class="actions">
-					<li><input type="text" name="email" id="contact-name" placeholder="Email" /></li>
-					<li><input type="text" name="password" id="contact-password" placeholder="Password" /></li>
+					<li><input type="text" name="email" id="contact-name" placeholder="Email" required=""/></li>
+					<li><input type="text" name="password" id="contact-password" placeholder="Password" required=""/></li>
 				</ul>
 				<ul class="actions">
 					<li><button type="button" class="button style1">Enter</a></li>
@@ -150,13 +149,13 @@
 			<form role="form" method="post" action="user/create.php">
 			<div class="6u">
 				<ul class="actions">
-					<li><input type="text" name="first_name" id="contact-name" placeholder="First Name" /></li>
-					<li><input type="text" name="last_name" id="contact-email" placeholder="Last Name" /></li>
+					<li><input type="text" name="first_name" id="contact-name" placeholder="First Name" required=""/></li>
+					<li><input type="text" name="last_name" id="contact-email" placeholder="Last Name" required=""/></li>
 				</ul>
 				<br>
 				<ul class="actions">
-					<li><input type="text" name="email" id="contact-password" placeholder="Email" /></li>
-					<li><input type="text" name="password" id="contact-confirm-password" placeholder="Password" /></li>
+					<li><input type="text" name="email" id="contact-password" placeholder="Email" required=""/></li>
+					<li><input type="text" name="password" id="contact-confirm-password" placeholder="Password" required=""/></li>
 				</ul>
 				<br>
 				<ul class="actions">
