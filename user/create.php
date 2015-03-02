@@ -26,7 +26,7 @@
 	}
 
 	// QUERY TO INSERT DATA
-		$insert = "INSERT INTO user (first_name,last_name,email,password) values ('" . $first_name . "','" . $last_name . "','" . $email . "','"
+	$insert = "INSERT INTO user (first_name,last_name,email,password) values ('" . $first_name . "','" . $last_name . "','" . $email . "','"
 	. hash('sha512',$pass) ."');";
 
 	// RUN QUERY
