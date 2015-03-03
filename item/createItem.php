@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	// VALIDATE'S FIELDS
 	if(isset($_POST['item_id']) && isset($_POST['description']) && isset($_POST['name']) && isset($_POST['price']) && isset($_POST['quantity']) &&isset($_POST['image'])){
 		// SET DATA TO VARIABLES
@@ -24,11 +23,9 @@
 		}
 	}
 
-	$insert = "INSERT into item (item_id, description, name, price, quantity, image) VALUES ('" . $item_id . "', '" . $description . "', '" . $name . "', '" . $price . "', '" . $quantity . "', '../images/pic01.jpg'); ";
+	$insert = "INSERT INTO item (item_id, description, name, price, quantity, image) VALUES ('" . $item_id . "', '" . $description . "', '" . $name . "', '" . $price . "', '" . $quantity . "', '../images/pic01.jpg'); ";
 
 	mysqli_query($conn, $insert);
-
-	session_start();
 
 	$getItem = "SELECT * FROM item ORDER BY item_id DESC LIMIT 1;";
 	if($result = mysqli_query($conn,$getItem)) {

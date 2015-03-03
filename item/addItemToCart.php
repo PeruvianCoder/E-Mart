@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	include 'authenticate.php';
+
 	// VALIDATE'S FIELDS
 	if(isset($_POST['item_id']) && isset($_POST['description']) && isset($_POST['name']) && isset($_POST['price']) && isset($_POST['quantity']) &&isset($_POST['image'])){
 		// SET DATA TO VARIABLES
@@ -30,7 +32,7 @@
 
 	session_start();
 
-	$getItem = "SELECT * FROM item ORDER BY item_id DESC LIMIT 1;";
+	$getItem = "SELECT * FROM item WHERE item_id = '" . $item_id . "';";
 	if($result = mysqli_query($conn,$getItem)) {
 		while($row = mysqli_fetch_assoc($result)) {
 			$_SESSION['ITEM_ID'] 	 	= $row['item_id'];
