@@ -23,13 +23,12 @@
 	$getOrder = "SELECT * FROM order WHERE user_id = '". $user_id . "';";
 	if($result = mysqli_query($conn,$getOrder)) {
 		while($row = mysqli_fetch_assoc($result)) {
-			$_SESSION['ORDER_ID']		= $row['order_id'];
-			$_SESSION['USER_ID']		= $row['user_id'];
+			$_SESSION['ORDER_ID'] = $row['order_id'];
 		}
 	}
 
 	mysqli_close($conn);
 
-	header("Location: ./");
+	header("Location: ../orderConfirmMail.php");
 
 ?>
