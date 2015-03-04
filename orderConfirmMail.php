@@ -7,6 +7,7 @@
 			$first_name 	= $row['first_name'];
 			$last_name 		= $row['last_name'];
 			$email 			= $row['email'];
+			$username = $first_name . " " . $last_name;
 		}
 	}
 
@@ -18,7 +19,7 @@
 	//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
 	$mail->isSMTP();                                      // Set mailer to use SMTP
-	$mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
+	$mail->Host = 'smtp.gmail.com;smtp2.example.com';  // Specify main and backup SMTP servers
 	$mail->SMTPAuth = true;                               // Enable SMTP authentication
 	$mail->Username = 'user@example.com';                 // SMTP username
 	$mail->Password = 'secret';                           // SMTP password
@@ -27,7 +28,7 @@
 
 	$mail->From = 'from@example.com';
 	$mail->FromName = 'Mailer';
-	$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
+	$mail->addAddress($email, $username);     // Add a recipient
 	$mail->addAddress('ellen@example.com');               // Name is optional
 	$mail->addReplyTo('info@example.com', 'Information');
 	$mail->addCC('cc@example.com');
