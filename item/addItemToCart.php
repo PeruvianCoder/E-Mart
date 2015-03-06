@@ -21,7 +21,7 @@
 	$check = "SELECT * FROM item WHERE item_id ='" . $item_id . "';";
 	if($result = mysqli_query($conn,$check)) {
 		if(mysqli_num_rows($result) <= 0) {
-			header("Location: ../?itemNotFound");
+			header("Location: ../?itemNotInStock");
 			die();
 		}
 	}

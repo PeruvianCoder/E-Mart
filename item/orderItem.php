@@ -15,8 +15,11 @@
 
 	$order_id  = uniqid(mt_rand(), true);
 	$items 	   = $_POST['items'];
-
+	$_SESSION['ORDER_ID'] = $order_id;
+	
 	include_once '../config/db-con.php';
+
+	//Adding multiple items to DB (make sure it works)
 
 	$items['order_id'] = $order_id;
 
@@ -25,10 +28,12 @@
 	$values  = implode(", ", $escaped_values);
 	$sql = "INSERT INTO `order_item`($columns) VALUES ($values)";
 
-	$insert = "INSERT INTO order_item (order_id, item_id, quantity) VALUES ('". $order_id . "','" . $item_id . "', 
-		'" . $quantity . "');";
+	// $insert = "INSERT INTO order_item (order_id, item_id, quantity) VALUES ('". $order_id . "','" . $item_id . "', 
+	// 	'" . $quantity . "');";
 
-	mysqli_query($conn, $insert);
+	mysqli_query($conn, $sql);
+
+
 
 	$getOrder = "SELECT * FROM order_item WHERE order_id = '". $order_id . "';";
 	if($result = mysqli_query($conn,$getOrder)) {
@@ -36,7 +41,7 @@
 			$item_id = $row['item_id'];
 			$getPrice = "SELECT price FROM item WHERE item_id = '" . $item_id . "';";
 			$_SESSION['PRICE']			= $row['price'];
-			$_SESSION['ORDER_ID']		= $row['order_id'];
+			//$_SESSION['ORDER_ID']		= $row['order_id'];
 			$_SESSION['ITEM_ID']		= $row['item_id'];
 			$_SESSION['QUANTITY']		= $row['quantity'];
 			$_SESSION['PRICE']			= $getPrice;
@@ -44,6 +49,8 @@
 	}
 
 	mysqli_close($conn);
+
+
 
 	header("Location: ./");
 
