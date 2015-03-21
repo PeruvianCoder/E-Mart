@@ -10,13 +10,13 @@
 	}
 
 	// CONNECT TO DB
-	include_once '../config/db-con.php';
+	include_once '../config/db-connect.php';
 
 	// CHECK IF USER EXISTS
 	$check = "SELECT id FROM user WHERE email='" . $email . "' AND password='" . hash('sha512',$pass) . "';";
 	if($result = mysqli_query($conn,$check)) {
 		if(mysqli_num_rows($result) == 0) {
-			header("Location: ../?combo");
+			header("Location: ../?error");
 			die();
 		}
 

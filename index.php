@@ -5,12 +5,12 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+<?php ?>
 	<head>
 		<title>Coming Soon!</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -87,7 +87,7 @@
 								<h1 style="font-size: 62px;">E-Mart</h1>
 							</div>
 							<ul>
-								<li class="current"><a href="index.html">Home</a></li>
+								<li class="current"><a href="index.php">Home</a></li>
 								<li>
 									<a href="">Services</a>
 									<ul>
@@ -107,7 +107,7 @@
 										<li><a href="#">Nisl tempus</a></li>
 									</ul>
 								</li>
-								<li><a href="left-sidebar.html">Products</a></li>
+								<li><a href="left-sidebar.php">Products</a></li>
 								<li><a href="#team">Who We Are</a></li>
 								<li><a href="#contact">Contact Us</a></li>
 							</ul>
@@ -139,9 +139,10 @@
 					<li><input type="text" name="password" id="contact-password" placeholder="Password" required=""/></li>
 				</ul>
 				<ul class="actions">
-					<li><button type="button" class="button style1">Enter</a></li>
+					<li><button type="submit" class="button style1">Enter</a></li>
 					<li><button type="button" class="button style1" onclick="loginModal()">Cancel</a></li>
 			</div>
+			</form>
 		</div>
 
 		<!--  Signup Modal -->
@@ -155,11 +156,11 @@
 				<br>
 				<ul class="actions">
 					<li><input type="text" name="email" id="contact-password" placeholder="Email" required=""/></li>
-					<li><input type="text" name="password" id="contact-confirm-password" placeholder="Password" required=""/></li>
+					<li><input type="password" name="password" id="contact-confirm-password" placeholder="Password" required=""/></li>
 				</ul>
 				<br>
 				<ul class="actions">
-					<li><button type="button" class="button style1">Sign Up</a></li>
+					<li><button type="submit" name="submit" class="button style1">Sign Up</a></li>
 					<li><button type="button" class="button style1" onclick="overlay()">Cancel</a></li>
 				</ul>
 			</form>
@@ -357,3 +358,4 @@
 
 	</body>
 </html>
+

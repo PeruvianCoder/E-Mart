@@ -14,7 +14,7 @@
 	}
 
 	// CONNECT TO DB
-	include_once '../config/db-con.php';
+	include_once '../config/db-connect.php';
 
 	// CHECK IF USER EXISTS
 	$check = "SELECT id FROM user WHERE email='" . $email . "';";
@@ -47,5 +47,5 @@
 	mysqli_close($conn);
 
 	// REDIRECT
-	header("Location: ./");
+	header("Location:./index.php");
 ?>
